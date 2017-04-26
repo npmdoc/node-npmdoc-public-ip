@@ -1,6 +1,6 @@
 # npmdoc-public-ip
 
-#### api documentation for  [public-ip (v2.3.3)](https://github.com/sindresorhus/public-ip#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-public-ip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-public-ip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-public-ip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-public-ip)
+#### basic api documentation for  [public-ip (v2.3.3)](https://github.com/sindresorhus/public-ip#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-public-ip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-public-ip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-public-ip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-public-ip)
 
 #### Get your public IP address - very fast!
 
@@ -92,7 +92,8 @@
             "node",
             "browser"
         ]
-    }
+    },
+    "bin": {}
 }
 ```
 
