@@ -85,6 +85,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">public-ip.</span>index</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.public-ip.browser">module public-ip.browser</a><ol>
@@ -102,6 +108,28 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.public-ip.browser.v6">
             function <span class="apidocSignatureSpan">public-ip.browser.</span>v6
+            <span class="apidocSignatureSpan">({}, defaults, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.public-ip.index">module public-ip.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.public-ip.index.v4">
+            function <span class="apidocSignatureSpan">public-ip.index.</span>v4
+            <span class="apidocSignatureSpan">({}, defaults, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.public-ip.index.v6">
+            function <span class="apidocSignatureSpan">public-ip.index.</span>v6
             <span class="apidocSignatureSpan">({}, defaults, opts)</span>
             </a>
 
@@ -190,6 +218,8 @@ publicIp.<span class="apidocCodeKeywordSpan">v6</span>().then(ip =&#x3e; {
 
 
 
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -238,6 +268,85 @@ publicIp.v6().then(ip =&#x3e; {
     <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; {
 	opts = Object.assign({}, defaults, opts);
 	return queryHttps(&#x27;v6&#x27;, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const publicIp = require(&#x27;public-ip&#x27;);
+
+publicIp.v4().then(ip =&#x3e; {
+	console.log(ip);
+	//=&#x3e; &#x27;46.5.21.123&#x27;
+});
+
+publicIp.<span class="apidocCodeKeywordSpan">v6</span>().then(ip =&#x3e; {
+	console.log(ip);
+	//=&#x3e; &#x27;fe80::200:f8ff:fe21:67cf&#x27;
+});
+```
+
+
+## API
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.public-ip.index" id="apidoc.module.public-ip.index">module public-ip.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.public-ip.index.v4" id="apidoc.element.public-ip.index.v4">
+        function <span class="apidocSignatureSpan">public-ip.index.</span>v4
+        <span class="apidocSignatureSpan">({}, defaults, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; {
+	opts = Object.assign({}, defaults, opts);
+
+	if (opts.https) {
+		return queryHttps(&#x27;v4&#x27;, opts);
+	}
+
+	return queryDns(&#x27;v4&#x27;, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+## Usage
+
+```js
+const publicIp = require(&#x27;public-ip&#x27;);
+
+publicIp.<span class="apidocCodeKeywordSpan">v4</span>().then(ip =&#x3e; {
+	console.log(ip);
+	//=&#x3e; &#x27;46.5.21.123&#x27;
+});
+
+publicIp.v6().then(ip =&#x3e; {
+	console.log(ip);
+	//=&#x3e; &#x27;fe80::200:f8ff:fe21:67cf&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.public-ip.index.v6" id="apidoc.element.public-ip.index.v6">
+        function <span class="apidocSignatureSpan">public-ip.index.</span>v6
+        <span class="apidocSignatureSpan">({}, defaults, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; {
+	opts = Object.assign({}, defaults, opts);
+
+	if (opts.https) {
+		return queryHttps(&#x27;v6&#x27;, opts);
+	}
+
+	return queryDns(&#x27;v6&#x27;, opts);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 const publicIp = require(&#x27;public-ip&#x27;);
